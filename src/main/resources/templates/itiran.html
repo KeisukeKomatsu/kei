@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>学生リスト</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>入学年度</th>
+				<th>学籍番号</th>
+				<th>氏名</th>
+				<th>クラス番号</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="studenthyou : ${StudentList}">
+				<td th:text="${studenthyou.ent_year}"></td>
+				<td th:text="${studenthyou.no}"></td>
+				<td th:text="${studenthyou.name}"></td>
+				<td th:text="${studenthyou.class_num}"></td>
+			</tr> 
+		</tbody>
+	</table>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Student List</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.age}"></td>
+                <td th:text="${student.grade}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
