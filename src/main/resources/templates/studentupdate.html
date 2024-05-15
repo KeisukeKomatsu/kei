@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生情報変更</title>
+</head>
+<body>
+    <h1>学生情報変更</h1>
+ 
+    <form action="/studentupdate" method="post" th:action="@{/studentupdate}" th:object="${student}">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>入学年度：</label>
+            <span th:text="${student.ent_year}"></span>
+            <input type="hidden" th:field="*{ent_year}"/> <!-- 入学年度フィールドのための非表示フィールド -->
+        </div>
+        <div>
+            <label>学生番号：</label>
+            <span th:text="${student.no}"></span> <!-- 学生番号を静的テキストとして表示 -->
+            <input type="hidden" th:field="*{no}"/> <!-- 学生番号のための非表示フィールド -->
+        </div>
+        <div>
+            <label for="name">名前：</label>
+            <input type="text" th:field="*{name}" id="name" placeholder="氏名を入力してください" required/>
+        </div>
+        <div>
+            <label for="class_num">クラス番号：</label>
+            <select id="class_num" name="class_num" th:field="*{class_num}">
+                <option value="101" th:selected="${student.class_num == 101}">101</option>
+                <option value="102" th:selected="${student.class_num == 102}">102</option>
+                <option value="201" th:selected="${student.class_num == 201}">201</option>
+                <option value="202" th:selected="${student.class_num == 202}">202</option>
+                <option value="301" th:selected="${student.class_num == 301}">301</option>
+                <option value="302" th:selected="${student.class_num == 302}">302</option>
+            </select>
+        </div>
+        <div>
+            <input type="checkbox" id="is_attend" name="is_attend" th:checked="${student.is_attend}"/>
+            <label for="is_attend">在学中</label>
+        </div>
+         <button type="submit">変更</button>
+         
+<!--         変えてもないも変わらないから保留-->
+<!--         <input type="submit" value="変更" onclick="window.location.href='/studentupdatekanryou'; return false;">-->
+
+
+    </form>
+    <a href="/itiran/">戻る</a><!-- 学生一覧に戻るリンク -->
+</body>
+</html>

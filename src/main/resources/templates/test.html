@@ -1,0 +1,10 @@
+CREATE TABLE `test` (
+	`id` SERIAL NOT NULL COMMENT 'ID',
+	`student_no` VARCHAR NOT NULL,
+	`subject_cd` CHAR NOT NULL,
+	`school_cd` CHAR NOT NULL,
+	`no` INT NOT NULL,
+	`point` INT,
+	`class_num` VARCHAR,
+	PRIMARY KEY (`id`,`student_no`,`subject_cd`,`school_cd`,`no`)
+) ENGINE=InnoDB;

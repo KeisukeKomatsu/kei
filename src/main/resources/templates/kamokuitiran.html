@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>科目管理</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>科目コード</th>
+                <th>科目名</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="subject : ${SubjectList}">
+                <td th:text="${subject.cd}"></td>
+                <td th:text="${subject.name}"></td>
+            </tr> 
+        </tbody>
+    </table>
+</body>
+</html>

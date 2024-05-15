@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>得点管理システム</title>
+  <style>
+    .header {
+      background-color: lightblue;
+      padding: 20px;
+    }
+    .sidebar {
+      width: 25%;
+      padding: 20px;
+      float: left;
+    }
+    .divider {
+      border-left: 1px solid black;
+      height: 100%;
+      margin-left: -1px; /* マージンを追加して間隔を調整 */
+    }
+    .main-content {
+      margin-left: 25%;
+      padding: 20px;
+    }
+    .block-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .color-block {
+      width: 30%;
+      height: 100px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .red { background-color: red; }
+    .green { background-color: green; }
+    .blue { background-color: blue; }
+    .color-block a {
+      color: white;
+      text-decoration: none;
+    }
+    .footer {
+      background-color: lightgray; /* 背景色をグレーに変更 */
+      padding: 20px;
+      text-align: center; /* テキストを中央に配置 */
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>得点管理システム</h1>
+  </div>
+  <div class="sidebar">
+    <ul>
+      <li><a href="/touroku/">新規登録</a></li>
+      <li><a href="/touroku2/">学生登録</a></li>
+      <li><a href="/itiran/">学生管理一覧</a></li>
+      <li><a href="/kamoku/">科目登録</a></li>
+      <li><a href="/kamokuitiran/">科目管理</a></li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="main-content">
+    <h2>メニュー</h2>
+    <div class="block-container">
+      <div class="color-block red"><a href="/touroku/">新規登録</a></div>
+      <div class="color-block green"><a href="/touroku2/">学生登録</a></div>
+      <div class="color-block blue"><a href="/itiran/">学生管理一覧</a></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div>© 2023 TIC</div>
+    <div>大原学園</div>
+  </div>
+</body>
+</html>
